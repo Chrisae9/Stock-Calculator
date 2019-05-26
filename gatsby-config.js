@@ -1,8 +1,18 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Photon",
-    author: "Hunter Chang",
-    description: "A Gatsby.js Starter based on Photon by HTML5 UP"
+    title: 'Gatsby Starter - Photon',
+    author: 'Hunter Chang',
+    description: 'A Gatsby.js Starter based on Photon by HTML5 UP',
+    menuLinks: [
+      {
+        name: 'home',
+        link: '/',
+      },
+      {
+        name: 'page2',
+        link: '/page-2',
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -19,6 +29,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
   ],
-}
+};
