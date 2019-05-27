@@ -8,16 +8,12 @@ import SEO from "../components/seo";
 import "semantic-ui-css/semantic.min.css";
 
 const IndexPage = () => (
-  <Layout>
+  <Layout title="">
     <SEO title="Home" />
-    <h1>Home</h1>
-    <p>Welcome to Simple Stock Calculator.</p>
+    <h1>Welcome to Simple Stock Calculator.</h1>
     <p>Navigate the different calculators above.</p>
 
     <h5>This website is a work in progress...</h5>
-    <h5>
-      Support the Creators at <a>www.paypal.com</a>
-    </h5>
 
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>

@@ -11,6 +11,10 @@ module.exports = {
         name: "Profit Calculator",
         link: "/profit-calc",
       },
+      {
+        name: "Short Position Calculator",
+        link: "/position-calc",
+      },
     ],
   },
   plugins: [

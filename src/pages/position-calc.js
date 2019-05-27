@@ -31,19 +31,19 @@ export default class ProfitCalc extends React.Component {
     const interest = this.state.interest / 100;
 
     //output calculations
-    const imv = initPps * quantity;
+    const borrsell = initPps * quantity;
     const growth = (newPps - initPps) / initPps;
-    const grossp = newPps * quantity - initPps * quantity;
+    const grossp = borrsell - newPps * quantity;
     const netp = grossp - Math.abs(grossp * interest);
 
     return (
-      <Layout title="profit-calc">
-        <SEO title="Profit Calculator" />
+      <Layout title="position-calc">
+        <SEO title="Short Position Calculator" />
         <Segment>
           <Grid columns={2} relaxed="very">
             <Grid.Column>
               <Form>
-                <h1>Profit Calculator</h1>
+                <h1>Short Position Calculator</h1>
 
                 <p>Enter Stock Information Below:</p>
 
@@ -117,12 +117,10 @@ export default class ProfitCalc extends React.Component {
                     <Table.Row>
                       <Table.Cell>
                         <Header as="h4">
-                          <Header.Content>
-                            Initial market value of position
-                          </Header.Content>
+                          <Header.Content>Borrow/Sell Amount</Header.Content>
                         </Header>
                       </Table.Cell>
-                      <Table.Cell>{imv}</Table.Cell>
+                      <Table.Cell>{borrsell}</Table.Cell>
                     </Table.Row>
                   </Table.Body>
 
@@ -169,6 +167,9 @@ export default class ProfitCalc extends React.Component {
         </Segment>
 
         <h5>This website is a work in progress...</h5>
+        <h5>
+          Support the Creators at <a>www.paypal.com</a>
+        </h5>
       </Layout>
     );
   }

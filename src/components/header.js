@@ -1,10 +1,10 @@
-import { Link } from "gatsby";
+import { navigate, Link } from "gatsby";
 import PropTypes from "prop-types";
 import React from "react";
 
 import { Menu } from "semantic-ui-react";
 
-const Header = ({ siteTitle, menuLinks }) => (
+const Header = ({ siteTitle, menuLinks, page }) => (
   <header
     style={{
       background: `#2E3440`,
@@ -34,9 +34,12 @@ const Header = ({ siteTitle, menuLinks }) => (
 
       <Menu>
         {menuLinks.map(link => (
-          <Link to={link.link}>
-            <Menu.Item>{link.name}</Menu.Item>
-          </Link>
+          <Menu.Item
+            active={"/" + page === link.link}
+            onClick={() => navigate(link.link)}
+          >
+            {link.name}
+          </Menu.Item>
         ))}
       </Menu>
     </div>
