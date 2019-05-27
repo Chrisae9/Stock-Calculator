@@ -1,34 +1,43 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter - Photon',
-    author: 'Hunter Chang',
-    description: 'A Gatsby.js Starter based on Photon by HTML5 UP',
+    title: "Stock Calculator",
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     menuLinks: [
       {
-        name: 'home',
-        link: '/',
+        name: "home",
+        link: "/",
       },
       {
-        name: 'page2',
-        link: '/page-2',
+        name: "gain-loss",
+        link: "/gain-loss",
       },
     ],
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
-        start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/website-icon.png', // This path is relative to the root of the site.
+        name: `stock-calculator`,
+        short_name: `stockcalc`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sass',
-    'gatsby-plugin-offline',
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.dev/offline
+    // `gatsby-plugin-offline`,
   ],
 };
