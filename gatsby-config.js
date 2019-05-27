@@ -9,7 +9,7 @@ module.exports = {
       },
       {
         name: "gain-loss",
-        link: "/gain-loss",
+        link: "/page-2",
       },
     ],
   },
