@@ -10,9 +10,9 @@ import "semantic-ui-css/semantic.min.css";
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
+    <h1>Home</h1>
+    <p>Welcome to Simple Stock Calculator.</p>
+    <p>Navigate the different calculators above.</p>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
 );
