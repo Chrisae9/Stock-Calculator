@@ -13,6 +13,12 @@ const IndexPage = () => (
     <h1>Home</h1>
     <p>Welcome to Simple Stock Calculator.</p>
     <p>Navigate the different calculators above.</p>
+
+    <h5>This website is a work in progress...</h5>
+    <h5>
+      Support the Creators at <a>www.paypal.com</a>
+    </h5>
+
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }} />
   </Layout>
 );

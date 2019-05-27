@@ -8,8 +8,8 @@ module.exports = {
         link: "/",
       },
       {
-        name: "Gain Loss Calculator",
-        link: "/gain-loss",
+        name: "Profit Calculator",
+        link: "/profit-calc",
       },
     ],
   },
