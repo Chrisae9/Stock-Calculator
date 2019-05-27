@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: "Stock Calculator",
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: "Simple Stock Calculator",
+    description: `This is Simple Stock Calculator!`,
     menuLinks: [
       {
-        name: "home",
+        name: "Home",
         link: "/",
       },
       {
-        name: "gain-loss",
+        name: "Gain Loss Calculator",
         link: "/page-2",
       },
     ],
