@@ -9,7 +9,7 @@ module.exports = {
       },
       {
         name: "Gain Loss Calculator",
-        link: "/page-2",
+        link: "/gain-loss",
       },
     ],
   },
