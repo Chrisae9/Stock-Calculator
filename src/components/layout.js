@@ -29,7 +29,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Headrer
+        <Header
           menuLinks={data.site.siteMetadata.menuLinks}
           siteTitle={data.site.siteMetadata.title}
         />
