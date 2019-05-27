@@ -167,9 +167,6 @@ export default class ProfitCalc extends React.Component {
         </Segment>
 
         <h5>This website is a work in progress...</h5>
-        <h5>
-          Support the Creators at <a>www.paypal.com</a>
-        </h5>
       </Layout>
     );
   }

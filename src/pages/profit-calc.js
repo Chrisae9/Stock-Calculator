@@ -118,7 +118,7 @@ export default class ProfitCalc extends React.Component {
                       <Table.Cell>
                         <Header as="h4">
                           <Header.Content>
-                            Initial market value of position
+                            Initial Market Value of Position
                           </Header.Content>
                         </Header>
                       </Table.Cell>
