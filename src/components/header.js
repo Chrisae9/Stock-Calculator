@@ -32,7 +32,7 @@ const Header = ({ siteTitle, menuLinks, page }) => (
         </h1>
       </div>
 
-      <Menu>
+      <Menu stackable>
         {menuLinks.map(link => (
           <Menu.Item
             active={"/" + page === link.link}

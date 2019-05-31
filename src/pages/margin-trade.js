@@ -48,7 +48,7 @@ export default class ProfitCalc extends React.Component {
 
 
     return (
-      <Layout title="margin-calc">
+ls      <Layout title="margin-trade">
         <SEO title="Margin Trade Calculator" />
         <Segment>
           <Grid columns={2} relaxed="very">
