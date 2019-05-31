@@ -15,6 +15,10 @@ module.exports = {
         name: "Short Position Calculator",
         link: "/position-calc",
       },
+      {
+        name: "Margin Trade Calculator",
+        link: "/margin-trade",
+      },
     ],
   },
   plugins: [
