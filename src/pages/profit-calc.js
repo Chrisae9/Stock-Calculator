@@ -12,6 +12,7 @@ import {
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import TableCell from "../components/TableCell";
+import TotalProfit from "../components/TotalProfit";
 
 export default class ProfitCalc extends React.Component {
   state = {
@@ -89,10 +90,7 @@ export default class ProfitCalc extends React.Component {
               </Form>
             </Grid.Column>
             <Grid.Column>
-              <Header as="h1" icon textAlign="center">
-                <Header.Content>Total Profit</Header.Content>
-                <Header>${netp}</Header>
-              </Header>
+              <TotalProfit netp={netp} />
 
               <div
                 style={{

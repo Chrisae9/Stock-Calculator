@@ -27,7 +27,7 @@ class TableCell extends React.Component {
 
 TableCell.propTypes = {
   label: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.number.isRequired,
   percent: PropTypes.bool,
   dollarSign: PropTypes.bool,
 };
