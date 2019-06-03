@@ -114,11 +114,8 @@ export default class ProfitCalc extends React.Component {
                     label="Initial Market Value of Position"
                     value={imv}
                   />
-
                   <TableCell label="Growth" value={growth * 100} percent />
-
                   <TableCell label="Gross Profit" value={grossp} />
-
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
