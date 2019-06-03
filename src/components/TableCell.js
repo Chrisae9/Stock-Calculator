@@ -16,7 +16,7 @@ class TableCell extends React.Component {
           </Table.Cell>
           <Table.Cell>
             {dollarSign && "$"}
-            {isNaN(value) ? 0 : value}
+            {isNaN(value) ? 0 : Math.round(value * 100) / 100}
             {percent && "%"}
           </Table.Cell>
         </Table.Row>
