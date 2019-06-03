@@ -12,6 +12,7 @@ import {
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import TableCell from "../components/TableCell";
 
 export default class ProfitCalc extends React.Component {
   state = {
@@ -28,7 +29,7 @@ export default class ProfitCalc extends React.Component {
   }
 
   render() {
-    const { initPps, quantity, newPps, initCap} = this.state;
+    const { initPps, quantity, newPps, initCap } = this.state;
     //interest to percentage
     const interest = this.state.interest / 100;
     const leverage = this.state.leverage / 100;
@@ -36,16 +37,14 @@ export default class ProfitCalc extends React.Component {
     //output calculations
     const totalBuy = parseInt(initCap) + initCap * leverage;
 
-    const totalMarketValue = initPps * quantity; 
+    const totalMarketValue = initPps * quantity;
 
     const growth = (newPps - initPps) / initPps;
     const grossp = totalMarketValue * growth;
     const owed = Math.abs(grossp) * interest;
     const netp = grossp - Math.abs(owed);
 
-
-    const remBuy = totalBuy - (initPps * quantity);
-
+    const remBuy = totalBuy - initPps * quantity;
 
     return (
       <Layout title="margin-trade">
@@ -53,7 +52,6 @@ export default class ProfitCalc extends React.Component {
         <Segment>
           <Grid columns={2} relaxed="very">
             <Grid.Column>
-
               <Form>
                 <h1>Margin Trade Calculator</h1>
 
@@ -67,7 +65,6 @@ export default class ProfitCalc extends React.Component {
                     icon="dollar sign"
                   />
                 </Form.Field>
-
 
                 <Form.Field>
                   <label>Leverage: </label>
@@ -121,10 +118,9 @@ export default class ProfitCalc extends React.Component {
             </Grid.Column>
 
             <Grid.Column>
-
               <Header as="h1" icon textAlign="center">
                 <Header.Content>Total Profit</Header.Content>
-                <Header>${netp}</Header>
+                <Header>${isNaN(netp) ? 0 : netp}</Header>
               </Header>
               <div
                 style={{
@@ -134,103 +130,27 @@ export default class ProfitCalc extends React.Component {
                   padding: "10px",
                 }}
               >
-
                 <Table basic="very" celled collapsing>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Total Buying Power
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{totalBuy}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Total Market Purchase Value
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{totalMarketValue}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Remaining Buying Power
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{remBuy}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>Growth </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{growth * 100}%</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Gross Profit 
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{grossp}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-                  
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Amount Owed To Broker
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{owed}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Net Profit After Interest / Commision
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{netp}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
+                  <TableCell label="Total Buying Power" value={totalBuy} />
+                  <TableCell
+                    label="Total Market Purchase Value"
+                    value={totalMarketValue}
+                  />
+                  <TableCell label="Remaining Buying Power" value={remBuy} />
+                  <TableCell label="Growth" value={growth * 100} percent />
+                  <TableCell label="Gross Profit" value={grossp} />
+                  <TableCell label="Amount Owed To Broker" value={owed} />
+                  <TableCell
+                    label="Net Profit After Interest / Commision"
+                    value={netp}
+                  />
                 </Table>
 
-                {totalMarketValue > totalBuy && <h4 style={{color: 'red'}}>ERROR: YOUR PURCHASE EXCEEDS BUYING POWER!!!! </h4>}
-
-
+                {totalMarketValue > totalBuy && (
+                  <h4 style={{ color: "red" }}>
+                    ERROR: YOUR PURCHASE EXCEEDS BUYING POWER!!!!{" "}
+                  </h4>
+                )}
               </div>
             </Grid.Column>
           </Grid>

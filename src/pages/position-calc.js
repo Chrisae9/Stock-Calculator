@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "gatsby";
 import {
   Segment,
   Grid,
@@ -12,6 +11,7 @@ import {
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import TableCell from "../components/TableCell";
 
 export default class ProfitCalc extends React.Component {
   state = {
@@ -104,8 +104,6 @@ export default class ProfitCalc extends React.Component {
                 }}
               >
                 <Table basic="very" celled collapsing>
-                  {/* <Table basic="very"> */}
-                  {/* <Table> */}
                   <Table.Header>
                     <Table.Row>
                       <Table.HeaderCell />
@@ -113,51 +111,13 @@ export default class ProfitCalc extends React.Component {
                     </Table.Row>
                   </Table.Header>
 
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>Borrow/Sell Amount</Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{borrsell}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>Growth </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{growth * 100}%</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>Gross Profit </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{grossp}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
-
-                  <Table.Body>
-                    <Table.Row>
-                      <Table.Cell>
-                        <Header as="h4">
-                          <Header.Content>
-                            Net Profit After Interest / Commision
-                          </Header.Content>
-                        </Header>
-                      </Table.Cell>
-                      <Table.Cell>{netp}</Table.Cell>
-                    </Table.Row>
-                  </Table.Body>
+                  <TableCell label="Borrow/Sell Amount" value={borrsell} />
+                  <TableCell label="Growth" value={growth * 100} percent />
+                  <TableCell label="Gross Profit" value={grossp} />
+                  <TableCell
+                    label="Net Profit After Interest / Commision"
+                    value={netp}
+                  />
                 </Table>
               </div>
             </Grid.Column>
