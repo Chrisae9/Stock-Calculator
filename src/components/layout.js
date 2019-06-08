@@ -44,9 +44,15 @@ const Layout = ({ children, title }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with
+            © {new Date().getFullYear()}, Built with ♥ by
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
+            <a href="https://www.linkedin.com/in/kevin-mckigney-b59481160/">
+              Kevin McKigney,
+            </a>
+            {`  `}
+            <a href="http://linkedin.com/in/zosman1/">Zach Osman </a>
+            {`  and  `}
+            <a href="https://www.linkedin.com/in/chrisae9/">Chris Alves</a>
           </footer>
         </div>
       </React.Fragment>
