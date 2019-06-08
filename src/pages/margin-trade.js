@@ -56,7 +56,7 @@ export default class ProfitCalc extends React.Component {
               <Form>
                 <h1>Margin Trade Calculator</h1>
 
-                <p>Enter Stock Information Below:</p>
+                <p>Enter Margin Trade Information Below:</p>
                 <Form.Field>
                   <label>Initial Capital:</label>
                   <Input
@@ -129,18 +129,20 @@ export default class ProfitCalc extends React.Component {
                 }}
               >
                 <Table basic="very" celled collapsing>
-                  <TableCell label="Total Buying Power" value={totalBuy} />
+                  <TableCell label="Total Buying Power" value={totalBuy} dollarSign/>
                   <TableCell
                     label="Total Market Purchase Value"
                     value={totalMarketValue}
+                    dollarSign
                   />
-                  <TableCell label="Remaining Buying Power" value={remBuy} />
+                  <TableCell label="Remaining Buying Power" value={remBuy} dollarSign/>
                   <TableCell label="Growth" value={growth * 100} percent />
-                  <TableCell label="Gross Profit" value={grossp} />
-                  <TableCell label="Amount Owed To Broker" value={owed} />
+                  <TableCell label="Gross Profit" value={grossp} dollarSign/>
+                  <TableCell label="Amount Owed To Broker" value={owed} dollarSign/>
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
+                    dollarSign
                   />
                 </Table>
 

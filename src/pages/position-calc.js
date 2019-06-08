@@ -46,7 +46,7 @@ export default class ProfitCalc extends React.Component {
               <Form>
                 <h1>Short Position Calculator</h1>
 
-                <p>Enter Stock Information Below:</p>
+                <p>Enter Short Position Information Below:</p>
 
                 <Form.Field>
                   <label>Stock Price:</label>
@@ -109,12 +109,13 @@ export default class ProfitCalc extends React.Component {
                     </Table.Row>
                   </Table.Header>
 
-                  <TableCell label="Borrow/Sell Amount" value={borrsell} />
+                  <TableCell label="Borrow/Sell Amount" value={borrsell} dollarSign/>
                   <TableCell label="Growth" value={growth * 100} percent />
-                  <TableCell label="Gross Profit" value={grossp} />
+                  <TableCell label="Gross Profit" value={grossp} dollarSign />
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
+                    dollarSign
                   />
                 </Table>
               </div>
