@@ -52,13 +52,6 @@ export default class ProfitCalc extends React.Component {
         <SEO title="Margin Trade Calculator" />
         <Segment>
           <Grid columns={2} relaxed="very">
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell />
-                <Table.HeaderCell>Value</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-
             <Grid.Column>
               <Form>
                 <h1>Margin Trade Calculator</h1>
@@ -136,6 +129,13 @@ export default class ProfitCalc extends React.Component {
                 }}
               >
                 <Table basic="very" celled collapsing>
+                  <Table.Header>
+                    <Table.Row>
+                      <Table.HeaderCell />
+                      <Table.HeaderCell>Value</Table.HeaderCell>
+                    </Table.Row>
+                  </Table.Header>
+
                   <TableCell
                     label="Total Buying Power"
                     value={totalBuy}
