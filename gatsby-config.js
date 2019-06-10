@@ -4,12 +4,8 @@ module.exports = {
     description: `This is Simple Stock Calculator!`,
     menuLinks: [
       {
-        name: "Home",
-        link: "/",
-      },
-      {
         name: "Profit Calculator",
-        link: "/profit-calc",
+        link: "/",
       },
       {
         name: "Short Position Calculator",
