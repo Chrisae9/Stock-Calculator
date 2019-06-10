@@ -11,7 +11,9 @@ export default class TotalProfit extends React.Component {
     return (
       <Header as="h1" icon textAlign="center">
         <Header.Content>Total Profit</Header.Content>
-        <Header color={color}>${Math.round(netp * 100) / 100}</Header>
+        <Header color={color}>
+          {netp < 0 && "-"}${Math.abs(Math.round(netp * 100) / 100)}
+        </Header>
       </Header>
     );
   }
