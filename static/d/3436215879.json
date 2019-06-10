@@ -1,1 +1,1 @@
-{"data":{"site":{"siteMetadata":{"title":"Simple Stock Calculator","menuLinks":[{"name":"Home","link":"/"},{"name":"Profit Calculator","link":"/profit-calc"},{"name":"Short Position Calculator","link":"/position-calc"},{"name":"Margin Trade Calculator","link":"/margin-trade"}]}}}}
+{"data":{"site":{"siteMetadata":{"title":"Simple Stock Calculator","menuLinks":[{"name":"Profit Calculator","link":"/"},{"name":"Short Position Calculator","link":"/position-calc"},{"name":"Margin Trade Calculator","link":"/margin-trade"}]}}}}
