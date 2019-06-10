@@ -16,10 +16,10 @@ import TotalProfit from "../components/TotalProfit";
 
 export default class ProfitCalc extends React.Component {
   state = {
-    initPps: null,
-    quantity: null,
-    interest: null,
-    newPps: null,
+    initPps: "",
+    quantity: "",
+    interest: "",
+    newPps: "",
   };
 
   handleInput(event, name) {
@@ -30,6 +30,13 @@ export default class ProfitCalc extends React.Component {
     const { initPps, quantity, newPps } = this.state;
     //interest to percentage
     const interest = this.state.interest / 100;
+
+    const inputsPresent = !!(
+      initPps !== "" &&
+      quantity !== "" &&
+      newPps !== "" &&
+      interest !== ""
+    );
 
     //output calculations
     const borrsell = initPps * quantity;
@@ -90,7 +97,7 @@ export default class ProfitCalc extends React.Component {
               </Form>
             </Grid.Column>
             <Grid.Column>
-              <TotalProfit netp={netp} />
+              <TotalProfit netp={inputsPresent ? netp : 0} />
 
               <div
                 style={{
@@ -109,12 +116,28 @@ export default class ProfitCalc extends React.Component {
                     </Table.Row>
                   </Table.Header>
 
-                  <TableCell label="Borrow/Sell Amount" value={borrsell} dollarSign/>
-                  <TableCell label="Growth" value={growth * 100} percent />
-                  <TableCell label="Gross Profit" value={grossp} dollarSign />
+                  <TableCell
+                    label="Borrow/Sell Amount"
+                    value={borrsell}
+                    inputsPresent={inputsPresent}
+                    dollarSign
+                  />
+                  <TableCell
+                    label="Growth"
+                    value={growth * 100}
+                    inputsPresent={inputsPresent}
+                    percent
+                  />
+                  <TableCell
+                    label="Gross Profit"
+                    value={grossp}
+                    inputsPresent={inputsPresent}
+                    dollarSign
+                  />
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                 </Table>
@@ -124,8 +147,6 @@ export default class ProfitCalc extends React.Component {
 
           <Divider vertical>yields</Divider>
         </Segment>
-
-        <h5>This website is a work in progress...</h5>
       </Layout>
     );
   }

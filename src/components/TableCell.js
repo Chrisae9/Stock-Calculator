@@ -4,8 +4,12 @@ import { Table, Header } from "semantic-ui-react";
 
 class TableCell extends React.Component {
   render() {
-    const { value, label, percent, dollarSign } = this.props;
+    const { value, label, percent, dollarSign, inputsPresent } = this.props;
 
+    let output = Math.abs(Math.round(value * 100) / 100);
+    if (isNaN(value) || !inputsPresent) {
+      output = 0;
+    }
     return (
       <Table.Body>
         <Table.Row>
@@ -15,9 +19,9 @@ class TableCell extends React.Component {
             </Header>
           </Table.Cell>
           <Table.Cell>
-            {value < 0 && "-"}
+            {inputsPresent && value < 0 && "-"}
             {dollarSign && "$"}
-            {isNaN(value) ? 0 : Math.abs(Math.round(value * 100) / 100)}
+            {output}
             {percent && "%"}
           </Table.Cell>
         </Table.Row>
@@ -29,6 +33,7 @@ class TableCell extends React.Component {
 TableCell.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.number.isRequired,
+  inputsPresent: PropTypes.bool.isRequired,
   percent: PropTypes.bool,
   dollarSign: PropTypes.bool,
 };

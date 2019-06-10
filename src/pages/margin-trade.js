@@ -17,12 +17,12 @@ import TotalProfit from "../components/TotalProfit";
 
 export default class ProfitCalc extends React.Component {
   state = {
-    initPps: null,
-    quantity: null,
-    interest: null,
-    newPps: null,
-    leverage: null,
-    initCap: null,
+    initPps: "",
+    quantity: "",
+    interest: "",
+    newPps: "",
+    leverage: "",
+    initCap: "",
   };
 
   handleInput(event, name) {
@@ -35,16 +35,22 @@ export default class ProfitCalc extends React.Component {
     const interest = this.state.interest / 100;
     const leverage = this.state.leverage / 100;
 
+    const inputsPresent = !!(
+      initPps !== "" &&
+      quantity !== "" &&
+      newPps !== "" &&
+      initCap !== "" &&
+      interest !== "" &&
+      leverage !== ""
+    );
+
     //output calculations
     const totalBuy = parseInt(initCap) + initCap * leverage;
-
     const totalMarketValue = initPps * quantity;
-
     const growth = (newPps - initPps) / initPps;
     const grossp = totalMarketValue * growth;
     const owed = Math.abs(grossp) * interest;
     const netp = grossp - Math.abs(owed);
-
     const remBuy = totalBuy - initPps * quantity;
 
     return (
@@ -119,7 +125,19 @@ export default class ProfitCalc extends React.Component {
             </Grid.Column>
 
             <Grid.Column>
-              <TotalProfit netp={netp} />
+              {totalMarketValue > totalBuy && (
+                <h4
+                  style={{
+                    color: "red",
+                    justifyContent: "center",
+                    display: "flex",
+                  }}
+                >
+                  YOUR PURCHASE EXCEEDS BUYING POWER
+                </h4>
+              )}
+
+              <TotalProfit netp={inputsPresent ? netp : 0} />
               <div
                 style={{
                   display: "flex",
@@ -139,45 +157,52 @@ export default class ProfitCalc extends React.Component {
                   <TableCell
                     label="Total Buying Power"
                     value={totalBuy}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                   <TableCell
                     label="Total Market Purchase Value"
                     value={totalMarketValue}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                   <TableCell
                     label="Remaining Buying Power"
                     value={remBuy}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
-                  <TableCell label="Growth" value={growth * 100} percent />
-                  <TableCell label="Gross Profit" value={grossp} dollarSign />
+                  <TableCell
+                    label="Growth"
+                    value={growth * 100}
+                    inputsPresent={inputsPresent}
+                    percent
+                  />
+                  <TableCell
+                    label="Gross Profit"
+                    value={grossp}
+                    inputsPresent={inputsPresent}
+                    dollarSign
+                  />
                   <TableCell
                     label="Amount Owed To Broker"
                     value={owed}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                 </Table>
-
-                {totalMarketValue > totalBuy && (
-                  <h4 style={{ color: "red" }}>
-                    ERROR: YOUR PURCHASE EXCEEDS BUYING POWER!!!!{" "}
-                  </h4>
-                )}
               </div>
             </Grid.Column>
           </Grid>
 
           <Divider vertical>yields</Divider>
         </Segment>
-
-        <h5>This website is a work in progress...</h5>
       </Layout>
     );
   }
