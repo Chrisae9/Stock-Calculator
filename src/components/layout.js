@@ -44,7 +44,7 @@ const Layout = ({ children, title }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built with ♥ by
+            © {new Date().getFullYear()}, Built by
             {` `}
             <a href="https://www.linkedin.com/in/kevin-mckigney-b59481160/">
               Kevin McKigney,
