@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Simple Stock Calculator",
-    description: `This is Simple Stock Calculator!`,
+    description: `Stock Profit Calculator | Short Position Calculator | Margin Trade Calculator`,
     menuLinks: [
       {
         name: "Profit Calculator",
