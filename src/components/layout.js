@@ -8,6 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Header from "./header";
 import "./layout.css";
@@ -46,13 +47,13 @@ const Layout = ({ children, title }) => (
           <footer>
             © {new Date().getFullYear()}, Built by
             {` `}
-            <a href="https://www.linkedin.com/in/kevin-mckigney-b59481160/">
+            <OutboundLink href="https://www.linkedin.com/in/kevin-mckigney-b59481160/">
               Kevin McKigney,
-            </a>
+            </OutboundLink>
             {`  `}
-            <a href="http://linkedin.com/in/zosman1/">Zach Osman </a>
+            <OutboundLink href="http://linkedin.com/in/zosman1/">Zach Osman</OutboundLink>
             {`  and  `}
-            <a href="https://www.linkedin.com/in/chrisae9/">Chris Alves</a>
+            <OutboundLink href="https://www.linkedin.com/in/chrisae9/">Chris Alves</OutboundLink>
           </footer>
         </div>
       </React.Fragment>
