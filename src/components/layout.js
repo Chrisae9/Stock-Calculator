@@ -8,7 +8,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { OutboundLink } from "gatsby-plugin-google-analytics";
 
 import Header from "./header";
 import "./layout.css";
@@ -45,15 +45,19 @@ const Layout = ({ children, title }) => (
         >
           <main>{children}</main>
           <footer>
-            © {new Date().getFullYear()}, Built by
+            © {new Date().getFullYear()}, Built with ♥ by
             {` `}
             <OutboundLink href="https://www.linkedin.com/in/kevin-mckigney-b59481160/">
               Kevin McKigney,
             </OutboundLink>
             {`  `}
-            <OutboundLink href="http://linkedin.com/in/zosman1/">Zach Osman</OutboundLink>
+            <OutboundLink href="http://linkedin.com/in/zosman1/">
+              Zach Osman
+            </OutboundLink>
             {`  and  `}
-            <OutboundLink href="https://www.linkedin.com/in/chrisae9/">Chris Alves</OutboundLink>
+            <OutboundLink href="https://www.linkedin.com/in/chrisae9/">
+              Chris Alves
+            </OutboundLink>
           </footer>
         </div>
       </React.Fragment>
