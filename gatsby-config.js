@@ -28,7 +28,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-favicon`,
       options: {
-        logo: "./src/stockcalculator.ico",
+        logo: "./src/images/stockcalculator.ico",
 
       // WebApp Manifest Configuration
       appName: null, // Inferred with your package.json
