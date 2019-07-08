@@ -52,9 +52,9 @@ const Layout = ({ children, title }) => (
             </OutboundLink>
             {`  `}
             <OutboundLink href="http://linkedin.com/in/zosman1/">
-              Zach Osman
+              Zach Osman,
             </OutboundLink>
-            {`  and  `}
+            {`  and,  `}
             <OutboundLink href="https://www.linkedin.com/in/chrisae9/">
               Chris Alves
             </OutboundLink>
