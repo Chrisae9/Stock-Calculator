@@ -40,7 +40,7 @@ export default class ProfitCalc extends React.Component {
     );
 
     return (
-      <Layout title="profit-calc">
+      <Layout title="">
         <SEO title="Profit Calculator" />
         <Segment>
           <Grid columns={2} relaxed="very">
