@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Segment,
-  Grid,
-  Divider,
-  Input,
-  Form,
-  Table,
-} from "semantic-ui-react";
+import { Segment, Grid, Divider, Input, Form, Table } from "semantic-ui-react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -18,10 +11,10 @@ import "semantic-ui-css/semantic.min.css";
 
 export default class ProfitCalc extends React.Component {
   state = {
-    initPps: null,
-    quantity: null,
-    interest: null,
-    newPps: null,
+    initPps: "",
+    quantity: "",
+    interest: "",
+    newPps: "",
   };
 
   handleInput(event, name) {
@@ -38,6 +31,14 @@ export default class ProfitCalc extends React.Component {
     const growth = (newPps - initPps) / initPps;
     const grossp = newPps * quantity - initPps * quantity;
     const netp = grossp - Math.abs(grossp * interest);
+
+    const inputsPresent = !!(
+      initPps !== "" &&
+      quantity !== "" &&
+      newPps !== "" &&
+      interest !== ""
+    );
+    alert(inputsPresent)
 
     return (
       <Layout title="profit-calc">
@@ -92,7 +93,7 @@ export default class ProfitCalc extends React.Component {
               </Form>
             </Grid.Column>
             <Grid.Column>
-              <TotalProfit netp={netp} />
+              <TotalProfit netp={inputsPresent ? netp : 0} />
 
               <div
                 style={{
@@ -113,13 +114,25 @@ export default class ProfitCalc extends React.Component {
                   <TableCell
                     label="Initial Market Value of Position"
                     value={imv}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
-                  <TableCell label="Growth" value={growth * 100} percent />
-                  <TableCell label="Gross Profit" value={grossp} dollarSign />
+                  <TableCell
+                    label="Growth"
+                    value={growth * 100}
+                    inputsPresent={inputsPresent}
+                    percent
+                  />
+                  <TableCell
+                    label="Gross Profit"
+                    value={grossp}
+                    inputsPresent={inputsPresent}
+                    dollarSign
+                  />
                   <TableCell
                     label="Net Profit After Interest / Commision"
                     value={netp}
+                    inputsPresent={inputsPresent}
                     dollarSign
                   />
                 </Table>
