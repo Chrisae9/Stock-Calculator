@@ -7,7 +7,7 @@ import { Menu } from "semantic-ui-react";
 const Header = ({ siteTitle, menuLinks, page }) => (
   <header
     style={{
-      background: `#2E3440`,
+      background: `linear-gradient(to bottom, #26d98f, #26d98f 40%, white)`,
       marginBottom: `1.45rem`,
     }}
   >

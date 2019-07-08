@@ -1,5 +1,4 @@
 import React from "react";
-// import { Link } from "gatsby";
 import {
   Segment,
   Grid,
@@ -7,7 +6,6 @@ import {
   Input,
   Form,
   Table,
-  Header,
 } from "semantic-ui-react";
 
 import Layout from "../components/layout";

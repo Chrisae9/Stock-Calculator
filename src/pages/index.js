@@ -6,7 +6,6 @@ import {
   Input,
   Form,
   Table,
-  Header,
 } from "semantic-ui-react";
 
 import Layout from "../components/layout";
