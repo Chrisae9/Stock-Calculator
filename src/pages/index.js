@@ -38,7 +38,6 @@ export default class ProfitCalc extends React.Component {
       newPps !== "" &&
       interest !== ""
     );
-    alert(inputsPresent)
 
     return (
       <Layout title="profit-calc">
