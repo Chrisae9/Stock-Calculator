@@ -2,7 +2,7 @@
   Simple Stock Calculator  
 </h1>
 
-> Build With GatsbyJS
+> Built With GatsbyJS
 
 
 Simple Stock Calculator is a web app that will be used by everyday investors looking to easily predict gains or losses from security transactions. 
