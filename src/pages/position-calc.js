@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Segment,
-  Grid,
-  Divider,
-  Input,
-  Form,
-  Table,
-} from "semantic-ui-react";
+import { Segment, Grid, Divider, Input, Form, Table } from "semantic-ui-react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -75,11 +68,11 @@ export default class ProfitCalc extends React.Component {
                 </Form.Field>
 
                 <Form.Field>
-                  <label>Interest or Comission:</label>
+                  <label>Interest or Commission:</label>
                   <Input
                     value={this.state.interest}
                     onChange={event => this.handleInput(event, "interest")}
-                    placeholder="Interest or Comission"
+                    placeholder="Interest or Commission"
                     icon="percent"
                   />
                 </Form.Field>
