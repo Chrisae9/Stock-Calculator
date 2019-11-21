@@ -134,7 +134,7 @@ export default class ProfitCalc extends React.Component {
                     dollarSign
                   />
                   <TableCell
-                    label="Net Profit After Interest / Commision"
+                    label="Net Profit After Interest / Commission"
                     value={netp}
                     inputsPresent={inputsPresent}
                     dollarSign
