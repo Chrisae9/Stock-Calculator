@@ -71,11 +71,11 @@ export default class ProfitCalc extends React.Component {
                 </Form.Field>
 
                 <Form.Field>
-                  <label>Interest or Comission:</label>
+                  <label>Interest or Commission:</label>
                   <Input
                     value={this.state.interest}
                     onChange={event => this.handleInput(event, "interest")}
-                    placeholder="Interest or Comission"
+                    placeholder="Interest or Commission"
                     icon="percent"
                   />
                 </Form.Field>
@@ -129,7 +129,7 @@ export default class ProfitCalc extends React.Component {
                     dollarSign
                   />
                   <TableCell
-                    label="Net Profit After Interest / Commissionm"
+                    label="Net Profit After Interest / Commission"
                     value={netp}
                     inputsPresent={inputsPresent}
                     dollarSign

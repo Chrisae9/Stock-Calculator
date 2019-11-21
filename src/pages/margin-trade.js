@@ -86,7 +86,7 @@ export default class ProfitCalc extends React.Component {
                   <Input
                     value={this.state.interest}
                     onChange={event => this.handleInput(event, "interest")}
-                    placeholder="Interest Or Comission"
+                    placeholder="Interest Or Commission"
                     icon="percent"
                   />
                 </Form.Field>
