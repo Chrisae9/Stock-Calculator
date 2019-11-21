@@ -1,7 +1,9 @@
 module.exports = {
+  // pathPrefix: "/Stock-Calculator",
   siteMetadata: {
     title: "Simple Stock Calculator",
     description: `Stock Profit Calculator | Short Position Calculator | Margin Trade Calculator`,
+    siteUrl: `https://simplestockcalculator.com`,
     menuLinks: [
       {
         name: "Profit Calculator",
@@ -27,6 +29,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
+    "gatsby-plugin-sitemap",
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -40,16 +43,16 @@ module.exports = {
         icon: `src/images/stock-calculator.png`, // This path is relative to the root of the site.
       },
     },
-      {
-        resolve: `gatsby-plugin-google-analytics`,
-        options: {
-          trackingId: "UA-141695483-1",
-          head: false,
-          anonymize: true,
-          respectDNT: true,
-          variationId: "0",
-        },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-141695483-1",
+        head: false,
+        anonymize: true,
+        respectDNT: true,
+        variationId: "0",
       },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
